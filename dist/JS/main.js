@@ -20,14 +20,20 @@ function calBmi() {
 
         bmiRes.textContent = (userWeight.value / ((userHeight.value * userHeight.value)
             / 10000)).toFixed(2)
-
-        if (bmiRes.value > 18.5) {
-            mes.textContent = "Normal Weight."
-        } else if (bmiRes.value > 25) {
-            mes.textContent = "Overweight."
-        } else if (bmiRes.value < 18.5) {
-            mes.textContent = "Underweight"
-        }
+        check()
     }
-
 }
+function check() {
+    const bmi = parseFloat(bmiRes.textContent);
+    if (bmi > 18.5) {
+        mes.textContent = "Normal Weight.";
+        console.log("first");
+    } else if (bmi > 25) {
+        mes.textContent = "Overweight.";
+        console.log("second");
+    } else if (bmi < 18.5) {
+        mes.textContent = "Underweight.";
+        console.log("third");
+    }
+}
+
