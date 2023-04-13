@@ -3,10 +3,10 @@ let userHeight = document.getElementById("user-height")
 let userWeight = document.getElementById("user-weight")
 let bmiRes = document.getElementById("bmi-res")
 let mes = document.getElementById("message")
-
-
+const clrBtn = document.getElementById("clr-btn")
 
 calBtn.addEventListener("click", calBmi)
+clrBtn.addEventListener("click", clearInputs)
 
 function calBmi() {
     if (userHeight.value == "" || isNaN(userHeight.value))
@@ -25,15 +25,20 @@ function calBmi() {
 }
 function check() {
     const bmi = parseFloat(bmiRes.textContent);
-    if (bmi > 18.5) {
+    if (bmi > 18.5 && bmi <= 25) {
         mes.textContent = "Normal Weight.";
-        console.log("first");
-    } else if (bmi > 25) {
+    } else if (bmi > 25 && bmi <= 30) {
         mes.textContent = "Overweight.";
-        console.log("second");
     } else if (bmi < 18.5) {
         mes.textContent = "Underweight.";
-        console.log("third");
+    } else {
+        mes.textContent = "Obese.";
     }
 }
 
+function clearInputs() {
+    userHeight.value = ""
+    userWeight.value = ""
+    bmiRes.textContent = ""
+    mes.textContent = ""
+}

@@ -11,22 +11,32 @@ $text-color: #333;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 1.15rem;
 }
 
 body {
-    min-width: 400px;
+    min-width: 450px;
+    min-height: 300px;
+    max-width: 500px;
+    max-height: 350px;
     margin-top: 15px;
-    background-image: linear-gradient(to left, $base-color, $sec-color);
+    background-image: linear-gradient(to right, $base-color, rgb(202, 255, 202));
     color: $text-color;
     text-align: center;
     font-family: 'Nunito', sans-serif;
 
     button {
+        margin: 5px;
         padding: 5px;
         border-radius: 3px;
         border: none;
         background-color: $thr-color;
         color: #f5f5f5;
         outline: 1px solid #333;
+    }
+
+    a {
+        text-decoration: none;
+        color: $four-color;
     }
 }
